@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Login</h1>
+  <div class="errors">
+    <% if @messages %>
+      <ul>
+        <% @messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      <ul>
+    <% end %>
+  </div>
+  <form action="/authenticate" method="post">
+    Username<input type="text" name="user[username]" autofocus><br>
+    Password<input type="password" name="user[password]"><br>
+    <input type="submit" value="Login">
+  </form>
+  <a href="/user/new">Create User</a>
+</div>
